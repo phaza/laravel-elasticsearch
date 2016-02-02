@@ -41,7 +41,7 @@ class Factory {
 		// Configure logging
 
 		if ($config['logging']) {
-			if ($config['logObject'] instanceof LoggerInterface) {
+			if (isset($config['logObject']) && $config['logObject'] instanceof LoggerInterface) {
 				$clientBuilder->setLogger($config['logObject']);
 			} else {
 				$path = $config['logPath'];
